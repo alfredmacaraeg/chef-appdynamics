@@ -1,18 +1,18 @@
 require_relative 'spec_helper'
 
-describe file("#{$node['appdynamics']['java_agent']['install_dir']}/conf") do
+describe file("#{$node['appdynamics']['java_agent']['install_dir']}/javaagent/conf") do
   it 'is a directory' do
     expect(subject).to be_directory
   end
   it { should be_owned_by "#{$node['appdynamics']['java_agent']['owner']}" }
 end
-describe file("#{$node['appdynamics']['java_agent']['install_dir']}") do
+describe file("#{$node['appdynamics']['java_agent']['install_dir']}/javaagent") do
   it 'is a directory' do
     expect(subject).to be_directory
   end
   it { should be_owned_by "#{$node['appdynamics']['java_agent']['owner']}" }
 end
-describe file("#{$node['appdynamics']['java_agent']['install_dir']}/conf/controller-info.xml") do
+describe file("#{$node['appdynamics']['java_agent']['install_dir']}/javaagent/conf/controller-info.xml") do
   it 'is a file' do
     expect(subject).to be_file
   end
